@@ -1,0 +1,650 @@
+<html>
+<head>
+  <script src="https://global.curtin.edu.au/packages/jQuery-1.3.2/jquery-1.3.2.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="troubleshooting.css" />
+</head>
+
+<body>
+  <h1>WebEx Troubleshooting</h1>
+  <div id="troubleshooting" class="js-links">
+<!-- First step of troubleshooting, define whether they are having issues with audio, video, content or something else -->
+    <nav id="first-step" class="step-links">
+      <h3>What type of issues are you experiencing?</h3>
+      <div id="audio" data-opens="audio-hear-other" style="display:inline-block; cursor:pointer;">
+        <h4>Audio</h4>
+        <img src="images/WebEx-audio.png" style="width:130px;height:130px"/>
+      </div>
+      <div id="video" data-opens="video-issues" style="display:inline-block; cursor:pointer;">
+        <h4>Video</h4>
+        <img src="images/WebEx-MC-ConnectVideo.png" style="width:130px;height:130px"/>
+      </div>
+      <div id="sharing" data-opens="content-issues" style="display:inline-block; cursor:pointer;">
+        <h4>Content</h4>
+        <img src="images/WebEx-MC-ShareContent.png" style="width:130px;height:130px"/>
+      </div>
+      <div id="other" data-opens="other-issues" style="display:inline-block; cursor:pointer;">
+        <h4>Other</h4>
+        <img src="images/WebEx-GUI.png" style="width:130px;height:130px"/>
+      </div>
+    </nav>
+<!-- Diagnosing issues with audio -->
+    <nav id="audio-hear-other" style="display:none" class="step-links">
+        <h3>Can you hear the other end?</h3>
+        <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+          <button type="button" data-opens="audio-hear-you-yes" style="cursor:pointer;">Yes</button>
+          <button type="button" data-opens="audio-hear-you-no" style="cursor:pointer;">No</button>
+        </div>
+        <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float: right;"/>
+    </nav>
+
+    <nav id="audio-hear-you-yes" style="display:none" class="step-links">
+        <h3>Can the other end hear you?</h3>
+        <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+          <button type="button" data-opens="service-desk" style="cursor:pointer;">Yes</button>
+          <button type="button" data-opens="is-mic-muted" style="cursor:pointer;">No</button>
+        </div>
+        <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;" />
+    </nav>
+
+    <nav id="audio-hear-you-no" style="display:none" class="step-links">
+        <h3>Can the other end hear you?</h3>
+        <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+          <button type="button" data-opens="is-computer-muted" style="cursor:pointer;">Yes</button>
+          <button type="button" data-opens="is-audio-connected" style="cursor:pointer;">No</button>
+        </div>
+        <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;" />
+    </nav>
+
+    <nav id="connect-audio" style="display:none" class="step-links">
+      <h3>Connect your Audio</h3>
+      <h4>Connect using Computer</h4>
+      <p>In the 'Quick Start' tab of your WebEx session, click 'More Options' under 'Connect Audio' and select 'Call Using Computer'. This will then prompt you to select and test your audio devices. Make sure that you can hear the sound coming through your speakers and can see the audio levels being picked up by your microphone before clicking 'OK'. Once your audio is connected, the button will turn blue and display 'Connected to Audio'. If not, click the 'Connect to Audio' button again.</p>
+      <h4>Call in using a phone</h4>
+      <p>In the 'Quick Start' tab of your WebEx session, click 'More Options' under 'Connect Audio' and select 'I Will Call In'. You will then be provided with a call-in number (numbers for more countries are available by selecting 'All global call-in numbers') as well as an access code (which is your meeting number) and your Attendee ID. Connect your audio by calling the number from any phone line and enter the access code and attendee ID when prompted.</p>
+      <h4>Connect a Video Conferencing System</h4>
+      <p>In the 'Quick Start' tab of your WebEx Session, click 'More Options' under 'Connect Audio' and select 'Call My Video System'. It will then prompt you to enter the SIP address of your video conferencing or telepresence system. If you are trying to connect your Cisco desk phone, the SIP is your Curtin email (eg. john.smith@curtin.edu.au). If you don't know the SIP of your conferencing system, select 'Call in from a video system'. This will display the SIP address of the WebEx session which can be dialed into from your video conferencing system.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="test-audio" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right" />
+    </nav>
+
+    <nav id="is-computer-muted" style="display:none;" class="step-links">
+      <h3>In the participants panel, is there a yellow error triangle displayed next to your name?</h3>
+      <img src="images/WebEx-MC-Participants-Computermuted.png" style="width:230px; margin:auto; display:block; padding:20px;"/>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="unmute-computer">Yes</button>
+        <button type="button" data-opens="is-their-mic-muted">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;" />
+    </nav>
+
+    <nav id="is-their-mic-muted" style=display:none; class="step-links">
+      <h3>In the participants panel, is there a red cross next to the name of the other participants?</h3>
+      <img src="images/WebEx-MC-Participants-Micmuted.png" style="width:230px; margin:auto; display:block; padding:20px;"/>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="unmute-their-mic" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="is-audio-connected" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;" />
+    </nav>
+
+    <nav id="is-audio-connected" style="display:none;" class="step-links">
+      <h3>In the participants panel, is there a symbol next to your name similar to one of the following?</h3>
+      <img src="images/WebEx-MC-Participants-AudioConnectedComputer.png" style="width:230px; margin-left:auto; margin-right:auto; display:block; padding-top:20px;"/>
+      <img src="images/WebEx-MC-Participants-AudioConnectedPhone.png" style="width:230px; margin-left:auto; margin-right:auto; display:block; padding:10px;"/>
+      <img src="images/WebEx-MC-Participants-AudioConnectedTelepresence.png" style="width:230px; margin-left:auto; margin-right:auto; display:block; padding-bottom:20px;" />
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="service-desk" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="connect-audio" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+    <nav id="test-audio" style="display:none;" class="step-links">
+      <h3>Test Audio</h3>
+      <p>Select 'More Options' under 'Connected to Audio' and test your speaker device to ensure that you can hear the sound being played. Make sure to select and test the different devices available (from the drop down boxes) and select an alternate device if required.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;" />
+    </nav>
+
+    <nav id="unmute-their-mic" style="display:none" class="step-links">
+      <h3>Unmute their Microphone</h3>
+      <p>Ask the other participant to unmute their microphone so that you can hear them speaking. This can be done by clicking the red microphone icon next to their name.</p>
+      <p>Depending on the meeting restrictions, if you are the host you may be able to unmute a participant yourself.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+    <nav id="unmute-computer" style="display:none" class="step-links">
+      <h3>Unmute Computer</h3>
+      <p>Unmute your computer, or increase the system audio volume. This can either be done theough the volume button on the bottom right side of your taskbar or (if present) using the volume controls on your keyboard.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+    <nav id="is-mic-muted" style="display:none" class="step-links">
+      <h3>In the participants panel, is there a red cross next to your name?</h3>
+      <img src="images/WebEx-MC-Participants-Micmuted.png" style="width:230px; margin:auto; display:block; padding:20px" />
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="unmute-mic">Yes</button>
+        <button type="button" data-opens="is-their-computer-muted">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+    <nav id="unmute-mic" style="display:none" class="step-links">
+      <h3>Unmute Microphone</h3>
+      <p>Unmute your microphone by clicking on the red microphone icon next to your name in the participants panel.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+    <nav id="is-their-computer-muted" style="display:none" class="step-links">
+      <h3>In the participants panel, is there a yellow error triangle displayed next to the participant's name?</h3>
+      <img src="images/WebEx-MC-Participants-Computermuted.png" style="width:230px; margin:auto; display:block; padding:20px;" />
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="unmute-their-computer">Yes</button>
+        <button type="button" data-opens="is-their-audio-connected">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+    <nav id="unmute-their-computer" style="display:none" class="step-links">
+      <h3>Unmute their Computer</h3>
+      <p>Ask the participants to unmute their computer, or increase the system audio volume. This can either be done theough the volume button on the bottom right side of the taskbar or (if present) using the volume controls on the keyboard.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+    <nav id="is-their-audio-connected" style="display:none" class="step-links">
+      <h3>In the participants panel, is there a symbol next to the participant's name similar to one of the following?</h3>
+      <img src="images/WebEx-MC-Participants-AudioConnectedComputer.png" style="width:230px; margin:auto; display:block; padding-top:20px;"/>
+      <img src="images/WebEx-MC-Participants-AudioConnectedPhone.png" style="width:230px; margin:auto; display:block; padding:10px;"/>
+      <img src="images/WebEx-MC-Participants-AudioConnectedTelepresence.png" style="width:230px; margin:auto; display:block; padding-bottom:20px;"/>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="service-desk" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="connect-their-audio" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="connect-their-audio" style="display:none" class="step-links">
+      <h3>Instruct the participants to connect their audio using one of the following methods:</h3>
+      <h4>Connect using Computer</h4>
+      <p>In the 'Quick Start' tab of your WebEx session, click 'More Options' under 'Connect Audio' and select 'Call Using Computer'. This will then prompt you to select and test your audio devices. Make sure that you can hear the sound coming through your speakers and can see the audio levels being picked up by your microphone before clicking 'OK'. Once your audio is connected, the button will turn blue and display 'Connected to Audio'. If not, click the 'Connect to Audio' button again.</p>
+      <h4>Call in using a phone</h4>
+      <p>In the 'Quick Start' tab of your WebEx session, click 'More Options' under 'Connect Audio' and select 'I Will Call In'. You will then be provided with a call-in number (numbers for more countries are available by selecting 'All global call-in numbers') as well as an access code (which is your meeting number) and your Attendee ID. Connect your audio by calling the number from any phone line and enter the access code and attendee ID when prompted.</p>
+      <h4>Connect a Video Conferencing System</h4>
+      <p>In the 'Quick Start' tab of your WebEx Session, click 'More Options' under 'Connect Audio' and select 'Call My Video System'. It will then prompt you to enter the SIP address of your video conferencing or telepresence system. If you are trying to connect your Cisco desk phone, the SIP is your Curtin email (eg. john.smith@curtin.edu.au). If you don't know the SIP of your conferencing system, select 'Call in from a video system'. This will display the SIP address of the WebEx session which can be dialed into from your video conferencing system.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+<!-- Diagnosing issues with video -->
+    <nav id="video-issues" style="display:none" class="step-links">
+      <h3>What best describes the issues you're having with video?</h3>
+        <p><a data-opens="is-their-video-on" style="cursor:pointer; text-decoration:underline;">I can't see the other end</a></p>
+        <p><a data-opens="is-video-on" style="cursor:pointer; text-decoration:underline;">The other end can't see me</a></p>
+        <p><a data-opens="is-video-error" style="cursor:pointer; text-decoration:underline;">There is an error showing</a></p>
+        <p><a data-opens="service-desk" style="cursor:pointer; text-decoration:underline;">Something Else</a></p>
+        <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+    <nav id="is-their-video-on" style="display:none;" class="step-links">
+      <h3>In the participants panel, is there a video icon to the right of their name?</h3>
+      <img src="images/WebEx-MC-VideoConnected.png" style="width:400px; margin:auto; display:block; padding:20px;" />
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="is-video-error" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="connect-their-video" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="connect-their-video" style="display:none;" class="step-links">
+      <h3>Turn their video on</h3>
+      <p>Ask the participants to turn their video on. This can be done by clicking the video icon to the right of their name in the participants panel or using the 'Connect Video' prompt displayed on their screen.</p>
+      <p>Make sure the correct video device has been selected. This can be done using the drop-down box on the 'Connect Video' prompt or by clicking the settings icon at the top of the participants panel.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="is-video-error" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="is-video-on" style="display:none;" class="step-links">
+      <h3>In the participants panel, is there a video icon to the right of your name?</h3>
+      <img src="images/WebEx-MC-VideoConnected.png" style="width:400px; margin:auto; display:block; padding:20px;" />
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="is-av-venue" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="connect-video" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="connect-video" style="display:none;" class="step-links">
+      <h3>Turn your video on</h3>
+      <p>This can be done by clicking the video icon to the right of your name in the participants panel or using the 'Connect Video' prompt displayed on your screen.</p>
+      <p>Make sure the correct video device has been selected. This can be done using the drop-down box on the 'Connect Video' prompt or by clicking the settings icon at the top of the participants panel.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="is-av-venue" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="is-video-error" style="display:none;" class="step-links">
+      <h4>Is the follwing error being displayed?</h4>
+      <p><i>Due to low bandwith or local computer conditions (such as CPU or RAM use), video is not currently available. Video will resume automatically when conditions improve.</i></p>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="video-error-bandwidth" style="cursor:pointer;">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer;">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="video-error-bandwidth" style="display:none" class="step-links">
+      <h4>Low Bandwidth</h4>
+      <p>WebEx has several built in features that turn on when your computer is working hard or the network is slower than required. It prioritises the different content streams, the ensure that the most important content stream (audio) is still available even when the network slows down to dial-up speeds. It will initially degrade and then drop out the video feeds (so you may notice a little lag or the video of the other end disappearing), then the content to ensure that the audio can still be heard clearly on both ends.</p>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+    <nav id="is-av-venue" style="display:none;" class="step-links">
+      <h3>Are your currently using a Curtin AV Venue?</h3>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="is-colour-bars" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="is-video-error" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="is-colour-bars" style="display:none;" class="step-links">
+      <h3>Can you see colour bars (similar to below) in the video feed or on one of the displays?</h3>
+      <img src="images/colourbars.png" style="width:200px; margin:auto; display:block; padding:20px;" />
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="service-desk" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+<!-- Diagnosing issues with content -->
+    <nav id="content-issues" style="display:none" class="step-links">
+      <h3>What best describes the issues you're having with content?</h3>
+        <p><a data-opens="device-content-see" style="cursor:pointer; text-decoration:underline;">I can't see the content being shared</a></p>
+        <p><a data-opens="is-presenter" style="cursor:pointer; text-decoration:underline;">I can't share my content</a></p>
+        <p><a data-opens="device-content-they-see" style="cursor:pointer; text-decoration:underline;">The other end can't see my content</a></p>
+        <p><a data-opens="content-grey-boxes" style="cursor:pointer; text-decoration:underline;">There are grey boxes over my content</a></p>
+        <p><a data-opens="service-desk" style="cursor:pointer; text-decoration:underline;">Something Else</a></p>
+        <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+    <nav id="device-content-see" style="display:none;" class="step-links">
+      <h3>What device are you using?</h3>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Windows PC</h4>
+        <img src="images/pc.png" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Mac</h4>
+        <img src="images/mac.jpg" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>iPhone or iPad</h4>
+        <img src="images/ios.jpg" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Android Device</h4>
+        <img src="images/android.png" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="content-wp" style="cursor:pointer; display:inline-block;">
+        <h4>Windows Phone</h4>
+        <img src="images/wp.png" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Blackberry Device</h4>
+        <img src="images/blackberry.png" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="content-telepresence" style="cursor:pointer; display:inline-block;">
+        <h4>Telepresence</h4>
+        <img src="images/telepresence.png" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Curtin AV Venue or Meeting Room</h4>
+        <img src="images/av.jpg" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="content-wp" style="display:none;" class="step-links">
+      <p>The Windows Phone app for WebEx is currently still in Beta and there are several forms of content that currently not compatible when using the app on Windows Phone.</p>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="content-telepresence" style="display:none;" class="step-links">
+      <h3>Which method of content sharing are you using?</h3>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Sharing your Screen</h4>
+        <img src="images/WebEx-MC-Share-Screen.png" style="width:170px; margin-left:auto; margin-right:auto; display:block; padding:5px;" />
+      </div>
+      <div data-opens="content-telepresence" style="cursor:pointer; display:inline-block;">
+        <h4>Sharing a File</h4>
+        <img src="images/WebEx-MC-Share-File.png" style="width:170px; margin-left:auto; margin-right:auto; display:block; padding:5px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Sharing an Application</h4>
+        <img src="images/WebEx-MC-Share-Application.png" style="width:170px; margin-left:auto; margin-right:auto; display:block; padding:5px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Collaborative Whiteboard</h4>
+        <img src="images/WebEx-MC-Share-Whiteboard.png" style="width:260px; margin-left:auto; margin-right:auto; display:block; padding:5px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>AV System</h4>
+        <img src="images/WebEx-VCTP-Content.png" style="width:260px; margin-left:auto; margin-right:auto; display:block; padding:5px;" />
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="is-presenter" style="display:none;" class="step-links">
+      <h3>Are you the host or presenter for this session?</h3>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="service-desk" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="ask-host" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="ask-host" style="display:none;" class="step-links">
+      <hp>Contact the host/organisor of the session and request for them to give you presenter privileges</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="device-content-they-see" style="display:none;" class="step-links">
+      <h3>What device are they using?</h3>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Windows PC</h4>
+        <img src="images/pc.png" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Mac</h4>
+        <img src="images/mac.jpg" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>iPhone or iPad</h4>
+        <img src="images/ios.jpg" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Android Device</h4>
+        <img src="images/android.png" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="content-wp" style="cursor:pointer; display:inline-block;">
+        <h4>Windows Phone</h4>
+        <img src="images/wp.png" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Blackberry Device</h4>
+        <img src="images/blackberry.png" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="content-telepresence" style="cursor:pointer; display:inline-block; ">
+        <h4>Telepresence</h4>
+        <img src="images/telepresence.png" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+        <h4>Curtin AV Venue or Meeting Room</h4>
+        <img src="images/av.jpg" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="content-grey-boxes" style="display:none;" class="step-links">
+      <p>When sharing content by sharing your screen or sharing an application, WebEx will show a grey box over the content for all participants where the participants panel is on the host's screen. This can be moved, resized or hidden if required to show any content that it may be blocking.</p>
+      <img src="images/WebEx-MC-Share-GreyBoxes.png" style="width:400px; margin-left:auto; margin-right:auto; display:block; padding:20px;" />
+      <p>To prevent this from happening, share your content by selecting to 'Share a File'. This will upload the file to WebEx rather than mirroring how it appears on your screen and prevent the content being obscured. Please note, if you are showing a PowerPoint with animations or embedded videos, this will be affected by sharing the file. Contact CITS to discuss the options for shairng animations and embedded video files in your WebEx session.</p>
+      <p>Please contact the Service Desk for further assistance using one of the following methods:
+        <ul>
+          <li>(+618) 9266 9000 and select option 1 for urgent assistance</li>
+          <li><a href="http://itselfservice.curtin.edu.au">Self Service Portal</a></li>
+          <li>Email <a href="mailto:service.desk@curtin.edu.au">service.desk@curtin.edu.au</a></li>
+        </ul>
+      </p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="other-issues" style="display:none" class="step-links">
+      <h3>What best describes the issues you're having?</h3>
+      <p><a data-opens="time-start" style="cursor:pointer; text-decoration:underline;">I can't get into the session</a></p>
+      <p><a data-opens="compatible-devices" style="cursor:pointer; text-decoration:underline;">Is my device compatible with WebEx?</a></p>
+      <p><a data-opens="is-calendar-generic" style="cursor:pointer; text-decoration:underline;">I can't schedule the session in Outlook</a></p>
+      <p><a data-opens="is-account-active" style="cursor:pointer; text-decoration:underline;">I'm trying to add someone as an alternate host and it's displaying an error:</a> <br /><i style="text-align:center; display:block;">The designated alternate hosts do not have host accounts or privileges: *******@curtin.edu.au</i></p>
+      <p><a data-opens="is-right-email" style="cursor:pointer; text-decoration:underline;">I'm trying to give someone scheduling permissions but it's displaying an error:</a> <br /><i style="text-align:center; display:block;">This email address is not associated with a valid WebEx host user account on this site: *******@curtin.edu.au</i></p>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
+    </nav>
+
+    <nav id="time-start" style="display:none;" class="step-links">
+      <p>Depending on how the host has scheduled the session, you may only be able to enter the meeting up to 5 minutes before it starts. Confirm what time the session is meant to start and whether the host has started the session yet.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="confirm-details" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="confirm-details" style="display:none;" class="step-links">
+      <h3>Contact the host to confirm that you have the correct details for your session</h3>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="compatible-devices" style="display:none;" class="step-links">
+      <h3>Compatible Devices</h3>
+      <h4>Computer</h4>
+      <ul>
+        <li><strong>Windows</strong> 7 or higher</li>
+        <li><strong>Mac OS X</strong> 10.7 or higher</li>
+        <li><strong>Linux</strong> (there are currently known comaptibility issues)</li>
+      </ul>
+      <h4>Mobile Devices</h4><ul>
+        <li><strong>Android</strong> 4.0.3 or higher</li>
+        <li><strong>iOS</strong> 8.0 or higher</li>
+        <li><strong>Windows Phone</strong> 8 or higher</li>
+        <li><strong>Blackberry</strong> 10 OS</li>
+      </ul>
+      <h4>Browsers</h4><ul>
+        <li><strong>Internet Explorer</strong> 7 or higher</li>
+        <li><strong>Microsoft Edge</strong> 20.10240 or higher</li>
+        <li><strong>Google Chrome</strong> (due to recent updates, Chrome may not be compatible depending on version and is not recommended by CITS)</li>
+        <li><strong>Mozilla Firefox</strong></li>
+        <li><strong>Safari</strong> 5 or higher</li>
+      </ul>
+      <h4>Other</h4><ul>
+        <li><a data-opens="compatible-devices" href="http://worksmarter.curtin.edu.au/webex/venues" target="_blank">Compatible AV Venue</a></li>
+        <li>Video Conferencing system capable of SIP dialling</li>
+        <li>Cisco 8845 Desk Phone</li>
+        <li>Cisco 8945 Desk Phone</li>
+      </ul>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="is-calendar-generic" style="display:none;" class="step-links">
+      <h3>Are you trying to schedule the session on a generic or shared calendar?</h3>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="generic-calendar" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="is-calendar-other" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="generic-calendar" style="display:none;" class="step-links">
+      <h3>At this point in time, it isn't possible to schedule WebEx sessions on generic or shared calendars.</h3>
+      <p>If you are hosting regular WebEx sessions are not able to use your own account for them, please contact the Service Desk to see if a generic accoun can be created for you.</p>
+      <p>Please contact the Service Desk for further assistance using one of the following methods:
+        <ul>
+          <li>(+618) 9266 9000 and select option 1 for urgent assistance</li>
+          <li><a href="http://itselfservice.curtin.edu.au">Self Service Portal</a></li>
+          <li>Email <a href="mailto:service.desk@curtin.edu.au">service.desk@curtin.edu.au</a></li>
+        </ul>
+      </p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="is-calendar-other" style="display:none;" class="step-links">
+      <h3>Are you trying to schedule the session on someone else's calendar that you manage?</h3>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="is-scheduling-permissions" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="is-scheduling-permissions" style="display:none;" class="step-links">
+      <h3>Have you arranged to have scheduling permissions enabled for you on their WebEx account?</h3>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="service-desk" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="scheduling-permissions" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="scheduling-permissions" style="display:none;" class="step-links">
+      <h3>Enabling Scheduling Permission</h3>
+      <p>To allow people to schedule meetings on your behalf, navigate to:</p>
+      <p style="text-align:center; display:block;"><strong>My WebEx</strong> -> <strong>Preferences</strong> -> <strong>Scheduling Options</strong> -> <strong>Scheduling Permission</strong></p>
+      <img src="images/WebEx-Online-SchedulingPermissions.png" style="width:400px; margin-left:auto; margin-right:auto; display:block;" />
+      <p>Enter their email address and click <strong>Save</strong>. They can now schedule meetings for you provided they have access to your Outlook calendar.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="is-scheduling-account-active" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="is-scheduling-account-active" style="display:none;" class="step-links">
+      <h3>Activate their Account</h3>
+      <p>Ensure that the person you are trying to assign privileges to has activated their account. This can be done by logging into <a href="http://curtin.webex.com" target="_blank">curtin.webex.com</a> with their Staff OASIS credentials.</p>
+      <p>More information on how to activate their account can be found at <a href="http://worksmarter.curtin.edu.au/webex/getting-started" target="_blank">worksmarter.curtin.edu.au/webex/getting-started</a>.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="is-right-email" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="is-right-email" style="display:none;" class="step-links">
+      <p>To enable scheduling permissions, you must use the exact registered email address for the person. Most of the time it will be in the form of <i>firstname.lastname@curtin.edu.au</i> or <i>firstinitial.lastname@curtin.edu.au</i></p>
+      <p>Note. Only Curtin Staff (those with a *******@curtin.edu.au email address) are able to be assigned scheduling privileges.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <nav id="is-account-active" style="display:none;" class="step-links">
+      <h3>Activate their Account</h3>
+      <p>Ensure that the person you are trying to assign privileges to has activated their account. This can be done by logging into <a href="http://curtin.webex.com" target="_blank">curtin.webex.com</a> with their Staff OASIS credentials.</p>
+      <p>More information on how to activate their account can be found at <a href="http://worksmarter.curtin.edu.au/webex/getting-started" target="_blank">worksmarter.curtin.edu.au/webex/getting-started</a>.</p>
+      <p>Note. Only Curtin Staff (those with a *******@curtin.edu.au email address) are able to be added as alternate hosts.</p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav>
+
+    <!-- <nav id="" style="display:none;" class="step-links">
+      <h3></h3>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
+      </div>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </nav> -->
+
+    <div id="service-desk" style="display:none;" class="step-links">
+      <p>Please contact the Service Desk for further assistance using one of the following methods:
+        <ul>
+          <li>(+618) 9266 9000 and select option 1 for urgent assistance</li>
+          <li><a href="http://itselfservice.curtin.edu.au">Self Service Portal</a></li>
+          <li>Email <a href="mailto:service.desk@curtin.edu.au">service.desk@curtin.edu.au</a></li>
+        </ul>
+      </p>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </div>
+
+    <div id="problem-solved" style="display:none" class="step-links">
+      <p>Thank you for using CITS WebEx Troubleshooting</p>
+      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
+    </div>
+
+  </div>
+
+<script>
+  var $linksContainer = $('.js-links');
+  var $links = $linksContainer.find('div, button, a');
+  $links.click(function() {
+    $(this).parents('.step-links').fadeTo("fast", 0.2, function(){});
+    var opensId = $(this).attr('data-opens');
+    $('#' + opensId).show();
+  });
+</script>
+</body>
+</html>
