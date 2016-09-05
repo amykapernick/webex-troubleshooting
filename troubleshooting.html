@@ -8,7 +8,7 @@
   <h1>WebEx Troubleshooting</h1>
   <div id="troubleshooting" class="js-links">
 <!-- First step of troubleshooting, define whether they are having issues with audio, video, content or something else -->
-    <nav id="first-step" class="step-links">
+    <nav id="first-step" class="step-links active">
       <h3>What type of issues are you experiencing?</h3>
       <div id="audio" data-opens="audio-hear-other" style="display:inline-block; cursor:pointer;">
         <h4>Audio</h4>
@@ -34,7 +34,6 @@
           <button type="button" data-opens="audio-hear-you-yes" style="cursor:pointer;">Yes</button>
           <button type="button" data-opens="audio-hear-you-no" style="cursor:pointer;">No</button>
         </div>
-        <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float: right;"/>
     </nav>
 
     <nav id="audio-hear-you-yes" style="display:none" class="step-links">
@@ -43,7 +42,6 @@
           <button type="button" data-opens="service-desk" style="cursor:pointer;">Yes</button>
           <button type="button" data-opens="is-mic-muted" style="cursor:pointer;">No</button>
         </div>
-        <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;" />
     </nav>
 
     <nav id="audio-hear-you-no" style="display:none" class="step-links">
@@ -52,7 +50,6 @@
           <button type="button" data-opens="is-computer-muted" style="cursor:pointer;">Yes</button>
           <button type="button" data-opens="is-audio-connected" style="cursor:pointer;">No</button>
         </div>
-        <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;" />
     </nav>
 
     <nav id="connect-audio" style="display:none" class="step-links">
@@ -68,7 +65,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="test-audio" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right" />
     </nav>
 
     <nav id="is-computer-muted" style="display:none;" class="step-links">
@@ -78,7 +74,6 @@
         <button type="button" data-opens="unmute-computer">Yes</button>
         <button type="button" data-opens="is-their-mic-muted">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;" />
     </nav>
 
     <nav id="is-their-mic-muted" style=display:none; class="step-links">
@@ -88,7 +83,6 @@
         <button type="button" data-opens="unmute-their-mic" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="is-audio-connected" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;" />
     </nav>
 
     <nav id="is-audio-connected" style="display:none;" class="step-links">
@@ -100,7 +94,6 @@
         <button type="button" data-opens="service-desk" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="connect-audio" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
     <nav id="test-audio" style="display:none;" class="step-links">
@@ -111,7 +104,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;" />
     </nav>
 
     <nav id="unmute-their-mic" style="display:none" class="step-links">
@@ -123,7 +115,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
     <nav id="unmute-computer" style="display:none" class="step-links">
@@ -134,7 +125,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
     <nav id="is-mic-muted" style="display:none" class="step-links">
@@ -144,7 +134,6 @@
         <button type="button" data-opens="unmute-mic">Yes</button>
         <button type="button" data-opens="is-their-computer-muted">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
     <nav id="unmute-mic" style="display:none" class="step-links">
@@ -155,7 +144,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
     <nav id="is-their-computer-muted" style="display:none" class="step-links">
@@ -165,7 +153,6 @@
         <button type="button" data-opens="unmute-their-computer">Yes</button>
         <button type="button" data-opens="is-their-audio-connected">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
     <nav id="unmute-their-computer" style="display:none" class="step-links">
@@ -176,7 +163,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
     <nav id="is-their-audio-connected" style="display:none" class="step-links">
@@ -188,7 +174,6 @@
         <button type="button" data-opens="service-desk" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="connect-their-audio" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="connect-their-audio" style="display:none" class="step-links">
@@ -204,7 +189,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
 <!-- Diagnosing issues with video -->
@@ -214,7 +198,6 @@
         <p><a data-opens="is-video-on" style="cursor:pointer; text-decoration:underline;">The other end can't see me</a></p>
         <p><a data-opens="is-video-error" style="cursor:pointer; text-decoration:underline;">There is an error showing</a></p>
         <p><a data-opens="service-desk" style="cursor:pointer; text-decoration:underline;">Something Else</a></p>
-        <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
     <nav id="is-their-video-on" style="display:none;" class="step-links">
@@ -224,7 +207,6 @@
         <button type="button" data-opens="is-video-error" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="connect-their-video" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="connect-their-video" style="display:none;" class="step-links">
@@ -236,7 +218,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="is-video-error" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="is-video-on" style="display:none;" class="step-links">
@@ -246,7 +227,6 @@
         <button type="button" data-opens="is-av-venue" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="connect-video" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="connect-video" style="display:none;" class="step-links">
@@ -258,7 +238,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="is-av-venue" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="is-video-error" style="display:none;" class="step-links">
@@ -268,13 +247,11 @@
         <button type="button" data-opens="video-error-bandwidth" style="cursor:pointer;">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer;">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="video-error-bandwidth" style="display:none" class="step-links">
       <h4>Low Bandwidth</h4>
       <p>WebEx has several built in features that turn on when your computer is working hard or the network is slower than required. It prioritises the different content streams, the ensure that the most important content stream (audio) is still available even when the network slows down to dial-up speeds. It will initially degrade and then drop out the video feeds (so you may notice a little lag or the video of the other end disappearing), then the content to ensure that the audio can still be heard clearly on both ends.</p>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
     <nav id="is-av-venue" style="display:none;" class="step-links">
@@ -283,7 +260,6 @@
         <button type="button" data-opens="is-colour-bars" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="is-video-error" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="is-colour-bars" style="display:none;" class="step-links">
@@ -293,7 +269,6 @@
         <button type="button" data-opens="service-desk" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
 <!-- Diagnosing issues with content -->
@@ -304,7 +279,6 @@
         <p><a data-opens="device-content-they-see" style="cursor:pointer; text-decoration:underline;">The other end can't see my content</a></p>
         <p><a data-opens="content-grey-boxes" style="cursor:pointer; text-decoration:underline;">There are grey boxes over my content</a></p>
         <p><a data-opens="service-desk" style="cursor:pointer; text-decoration:underline;">Something Else</a></p>
-        <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
     <nav id="device-content-see" style="display:none;" class="step-links">
@@ -341,12 +315,10 @@
         <h4>Curtin AV Venue or Meeting Room</h4>
         <img src="images/av.jpg" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="content-wp" style="display:none;" class="step-links">
       <p>The Windows Phone app for WebEx is currently still in Beta and there are several forms of content that currently not compatible when using the app on Windows Phone.</p>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="content-telepresence" style="display:none;" class="step-links">
@@ -371,7 +343,6 @@
         <h4>AV System</h4>
         <img src="images/WebEx-VCTP-Content.png" style="width:260px; margin-left:auto; margin-right:auto; display:block; padding:5px;" />
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="is-presenter" style="display:none;" class="step-links">
@@ -380,7 +351,6 @@
         <button type="button" data-opens="service-desk" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="ask-host" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="ask-host" style="display:none;" class="step-links">
@@ -390,7 +360,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="device-content-they-see" style="display:none;" class="step-links">
@@ -427,7 +396,6 @@
         <h4>Curtin AV Venue or Meeting Room</h4>
         <img src="images/av.jpg" style="width:150px; height:150px; margin-left:auto; margin-right:auto; display:block; padding:10px;" />
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="content-grey-boxes" style="display:none;" class="step-links">
@@ -446,7 +414,6 @@
         <button type="button" data-opens="" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="other-issues" style="display:none" class="step-links">
@@ -456,7 +423,6 @@
       <p><a data-opens="is-calendar-generic" style="cursor:pointer; text-decoration:underline;">I can't schedule the session in Outlook</a></p>
       <p><a data-opens="is-account-active" style="cursor:pointer; text-decoration:underline;">I'm trying to add someone as an alternate host and it's displaying an error:</a> <br /><i style="text-align:center; display:block;">The designated alternate hosts do not have host accounts or privileges: *******@curtin.edu.au</i></p>
       <p><a data-opens="is-right-email" style="cursor:pointer; text-decoration:underline;">I'm trying to give someone scheduling permissions but it's displaying an error:</a> <br /><i style="text-align:center; display:block;">This email address is not associated with a valid WebEx host user account on this site: *******@curtin.edu.au</i></p>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right;">
     </nav>
 
     <nav id="time-start" style="display:none;" class="step-links">
@@ -466,7 +432,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="confirm-details" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="confirm-details" style="display:none;" class="step-links">
@@ -476,7 +441,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="compatible-devices" style="display:none;" class="step-links">
@@ -511,7 +475,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="is-calendar-generic" style="display:none;" class="step-links">
@@ -520,7 +483,6 @@
         <button type="button" data-opens="generic-calendar" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="is-calendar-other" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="generic-calendar" style="display:none;" class="step-links">
@@ -538,7 +500,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="is-calendar-other" style="display:none;" class="step-links">
@@ -547,7 +508,6 @@
         <button type="button" data-opens="is-scheduling-permissions" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="is-scheduling-permissions" style="display:none;" class="step-links">
@@ -556,7 +516,6 @@
         <button type="button" data-opens="service-desk" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="scheduling-permissions" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="scheduling-permissions" style="display:none;" class="step-links">
@@ -570,7 +529,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="is-scheduling-account-active" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="is-scheduling-account-active" style="display:none;" class="step-links">
@@ -582,7 +540,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="is-right-email" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="is-right-email" style="display:none;" class="step-links">
@@ -593,7 +550,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <nav id="is-account-active" style="display:none;" class="step-links">
@@ -606,7 +562,6 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav>
 
     <!-- <nav id="" style="display:none;" class="step-links">
@@ -616,10 +571,9 @@
         <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
         <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
       </div>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
     </nav> -->
 
-    <div id="service-desk" style="display:none;" class="step-links">
+    <nav id="service-desk" style="display:none;" class="step-links">
       <p>Please contact the Service Desk for further assistance using one of the following methods:
         <ul>
           <li>(+618) 9266 9000 and select option 1 for urgent assistance</li>
@@ -627,23 +581,43 @@
           <li>Email <a href="mailto:service.desk@curtin.edu.au">service.desk@curtin.edu.au</a></li>
         </ul>
       </p>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
-    </div>
+    </nav>
 
-    <div id="problem-solved" style="display:none" class="step-links">
+    <nav id="problem-solved" style="display:none" class="step-links">
       <p>Thank you for using CITS WebEx Troubleshooting</p>
-      <hr /><input type="button" value="Start Over" onClick="window.location.reload()" style="float:right">
-    </div>
+    </nav>
 
+  </div>
+
+  <div id="controls">
+    <hr />
+    <button type="button" id="back">Back</button>
+    <input type="button" id="refresh" value="Start Over" onClick="window.location.reload()" style="float:right">
   </div>
 
 <script>
   var $linksContainer = $('.js-links');
   var $links = $linksContainer.find('div, button, a');
+  var currentStep = $('.active');
+  var prevStep
+  console.log("currentStep");
+  console.log(currentStep);
   $links.click(function() {
-    $(this).parents('.step-links').fadeTo("fast", 0.2, function(){});
+    var prevStep = $(this).parents('.step-links');
+    $(this).parents('.step-links').hide();
+    $(this).parents('.step-links').removeClass('active');
     var opensId = $(this).attr('data-opens');
     $('#' + opensId).show();
+    $('#' + opensId).addClass('active');
+    var currentStep = $('.active');
+    console.log("currentStep");
+    console.log(currentStep);
+    console.log("prev.Step");
+    console.log(prevStep);
+  });
+
+  $('#back').click(function() {
+    prevStep
   });
 </script>
 </body>
