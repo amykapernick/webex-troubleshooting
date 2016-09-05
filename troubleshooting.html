@@ -599,26 +599,45 @@
   var $linksContainer = $('.js-links');
   var $links = $linksContainer.find('div, button, a');
   var currentStep = $('.active');
-  var prevStep
+  var prevStep = 0;
   console.log("currentStep");
   console.log(currentStep);
   $links.click(function() {
-    var prevStep = $(this).parents('.step-links');
+    prevStep = $(this).parents('.step-links');
     $(this).parents('.step-links').hide();
     $(this).parents('.step-links').removeClass('active');
-    var opensId = $(this).attr('data-opens');
+    opensId = $(this).attr('data-opens');
     $('#' + opensId).show();
     $('#' + opensId).addClass('active');
-    var currentStep = $('.active');
+    currentStep = $('.active');
+    $('#back').show();
     console.log("currentStep");
     console.log(currentStep);
-    console.log("prev.Step");
+    console.log("prevStep");
     console.log(prevStep);
   });
 
   $('#back').click(function() {
-    prevStep
+    prevStep.show();
+    prevStep.addClass('active');
+
+    currentStep.hide();
+    currentStep.removeClass('active');
+
+    currentStep = $('.active');
+    prevStep = 0;
+    $('#back').hide();
   });
+
+  if (prevStep === 0) {
+    $('#back').hide();
+  };
+
+  console.log("currentStep");
+  console.log(currentStep);
+  console.log("prev.Step");
+  console.log(prevStep);
+
 </script>
 </body>
 </html>
