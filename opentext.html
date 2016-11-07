@@ -1,18 +1,11 @@
-<html>
-<head>
-  <script src="https://global.curtin.edu.au/packages/jQuery-1.3.2/jquery-1.3.2.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="troubleshooting.css" />
-</head>
-
-<body>
-  <h1>WebEx Troubleshooting</h1>
+<!-- Entire contents of this file need to be included when updating the code -->
   <div id="troubleshooting" class="js-links">
-<!-- First step of troubleshooting, define whether they are having issues with audio, video, content or something else -->
+<!-- First step of troubleshooting, define whether they are having issues with audio, video, content or something else. The selection then redirects to the relevant troubleshooting steps -->
     <nav id="first-step" class="step-links active">
       <h3>What type of issues are you experiencing?</h3>
       <div id="audio" data-opens="audio-hear-other" style="display:inline-block; cursor:pointer;">
         <h4>Audio</h4>
-        <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-audio.png" style="width:130px;height:130px"/>
+        <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-audio.png" style="width:130px;height:130px"/> <!-- Note how the link to the image is written. This is very important to make sure it works. -->
       </div>
       <div id="video" data-opens="video-issues" style="display:inline-block; cursor:pointer;">
         <h4>Video</h4>
@@ -27,7 +20,9 @@
         <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-GUI.png" style="width:130px;height:130px"/>
       </div>
     </nav>
+
 <!-- Diagnosing issues with audio -->
+<!-- Can yoi hear the other end? Yes or No then redirect to relevant steps. These steps will both then ask if the other end can hear you but are separate as they send to different places. -->
     <nav id="audio-hear-other" style="display:none" class="step-links">
         <h3>Can you hear the other end?</h3>
         <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
@@ -36,6 +31,7 @@
         </div>
     </nav>
 
+<!-- You can hear the other end but can they hear you? If yes, redirects to the service desk (you can both hear each other so what issue do you have with audio?). If no, checks if your mic is muted -->
     <nav id="audio-hear-you-yes" style="display:none" class="step-links">
         <h3>Can the other end hear you?</h3>
         <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
@@ -44,6 +40,7 @@
         </div>
     </nav>
 
+<!-- You can't hear the other end, checking if they can hear you. IF they can, checking if your computer is muted. If neither party can hear each other, checking if audio is connected properly -->
     <nav id="audio-hear-you-no" style="display:none" class="step-links">
         <h3>Can the other end hear you?</h3>
         <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
@@ -52,6 +49,7 @@
         </div>
     </nav>
 
+<!-- Instructions for how to connect your audio. This includes steps for using computer, phone call or video conferencing. Then checks if the issue has been resolved. If it hasn't, then directs to test audio -->
     <nav id="connect-audio" style="display:none" class="step-links">
       <h3>Connect your Audio</h3>
       <h4>Connect using Computer</h4>
@@ -67,6 +65,7 @@
       </div>
     </nav>
 
+<!-- Checks if your computer has been muted (yellow triangle). If yes, instructs you to unmute; if no, checks if their mic is muted -->
     <nav id="is-computer-muted" style="display:none;" class="step-links">
       <h3>In the participants panel, is there a yellow error triangle displayed next to your name?</h3>
       <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-Participants-Computermuted.png" style="width:230px; margin:auto; display:block; padding:20px;"/>
@@ -76,6 +75,7 @@
       </div>
     </nav>
 
+<!-- Checks if the other participant has muted their mic. If yes, instructs to unmute mic; if no, checks if audio has been connected -->
     <nav id="is-their-mic-muted" style=display:none; class="step-links">
       <h3>In the participants panel, is there a red cross next to the name of the other participants?</h3>
       <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-Participants-Micmuted.png" style="width:230px; margin:auto; display:block; padding:20px;"/>
@@ -85,6 +85,7 @@
       </div>
     </nav>
 
+<!-- Checks if there is a symbol next to your name to show that audio has been connected. If yes, directs to service desk; if no, instructs to connect audio -->
     <nav id="is-audio-connected" style="display:none;" class="step-links">
       <h3>In the participants panel, is there a symbol next to your name similar to one of the following?</h3>
       <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-Participants-AudioConnectedComputer.png" style="width:230px; margin-left:auto; margin-right:auto; display:block; padding-top:20px;"/>
@@ -96,6 +97,7 @@
       </div>
     </nav>
 
+<!-- Tests audio connection to make sure speakers and mic are correctly selected and working. If this doesn't fix the issue, directed to service desk -->
     <nav id="test-audio" style="display:none;" class="step-links">
       <h3>Test Audio</h3>
       <p>Select 'More Options' under 'Connected to Audio' and test your speaker device to ensure that you can hear the sound being played. Make sure to select and test the different devices available (from the drop down boxes) and select an alternate device if required.</p>
@@ -106,6 +108,7 @@
       </div>
     </nav>
 
+<!-- Instruct the other participant to unmute their microphone. -->
     <nav id="unmute-their-mic" style="display:none" class="step-links">
       <h3>Unmute their Microphone</h3>
       <p>Ask the other participant to unmute their microphone so that you can hear them speaking. This can be done by clicking the red microphone icon next to their name.</p>
@@ -117,6 +120,7 @@
       </div>
     </nav>
 
+<!-- Instructions to unmute your computer -->
     <nav id="unmute-computer" style="display:none" class="step-links">
       <h3>Unmute Computer</h3>
       <p>Unmute your computer, or increase the system audio volume. This can either be done theough the volume button on the bottom right side of your taskbar or (if present) using the volume controls on your keyboard.</p>
@@ -127,6 +131,7 @@
       </div>
     </nav>
 
+<!-- Checks if your mic is muted. If it is, directs to unmute mic; if no, checks if their computer is muted -->
     <nav id="is-mic-muted" style="display:none" class="step-links">
       <h3>In the participants panel, is there a red cross next to your name?</h3>
       <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-Participants-Micmuted.png" style="width:230px; margin:auto; display:block; padding:20px" />
@@ -136,6 +141,7 @@
       </div>
     </nav>
 
+<!-- Instructions to unmute your mic -->
     <nav id="unmute-mic" style="display:none" class="step-links">
       <h3>Unmute Microphone</h3>
       <p>Unmute your microphone by clicking on the red microphone icon next to your name in the participants panel.</p>
@@ -146,6 +152,7 @@
       </div>
     </nav>
 
+<!-- Checks if their computer is muted. If yes, directs to unmute; if no, checks if their audio is connected -->
     <nav id="is-their-computer-muted" style="display:none" class="step-links">
       <h3>In the participants panel, is there a yellow error triangle displayed next to the participant's name?</h3>
       <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-Participants-Computermuted.png" style="width:230px; margin:auto; display:block; padding:20px;" />
@@ -155,6 +162,7 @@
       </div>
     </nav>
 
+<!-- Instructs to unmute their computer -->
     <nav id="unmute-their-computer" style="display:none" class="step-links">
       <h3>Unmute their Computer</h3>
       <p>Ask the participants to unmute their computer, or increase the system audio volume. This can either be done theough the volume button on the bottom right side of the taskbar or (if present) using the volume controls on the keyboard.</p>
@@ -165,6 +173,7 @@
       </div>
     </nav>
 
+<!-- Checks if they have a symbol next to their name to show that audio ahs been correctly connected -->
     <nav id="is-their-audio-connected" style="display:none" class="step-links">
       <h3>In the participants panel, is there a symbol next to the participant's name similar to one of the following?</h3>
       <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-Participants-AudioConnectedComputer.png" style="width:230px; margin:auto; display:block; padding-top:20px;"/>
@@ -176,6 +185,7 @@
       </div>
     </nav>
 
+<!-- Instructs how they can connect their audio. This will include using computer, phone call or video conferencing system -->
     <nav id="connect-their-audio" style="display:none" class="step-links">
       <h3>Instruct the participants to connect their audio using one of the following methods:</h3>
       <h4>Connect using Computer</h4>
@@ -192,6 +202,7 @@
     </nav>
 
 <!-- Diagnosing issues with video -->
+<!-- Checks what issues you're having. You can't see them, they can't see you, error showing (eg bandwidth error) or something else (which will redirect to service desk)-->
     <nav id="video-issues" style="display:none" class="step-links">
       <h3>What best describes the issues you're having with video?</h3>
         <p><a data-opens="is-their-video-on" style="cursor:pointer; text-decoration:underline;">I can't see the other end</a></p>
@@ -200,6 +211,7 @@
         <p><a data-opens="service-desk" style="cursor:pointer; text-decoration:underline;">Something Else</a></p>
     </nav>
 
+<!-- Is there an icon showing they have their video connected? If yes, checks if their is a bandwidth error shwowing -->
     <nav id="is-their-video-on" style="display:none;" class="step-links">
       <h3>In the participants panel, is there a video icon to the right of their name?</h3>
       <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-VideoConnected.png" style="width:400px; margin:auto; display:block; padding:20px;" />
@@ -209,6 +221,7 @@
       </div>
     </nav>
 
+<!-- Instructs other participants to turn video on. If this doens't fix it, chekcs if there is a bandwidth erorr-->
     <nav id="connect-their-video" style="display:none;" class="step-links">
       <h3>Turn their video on</h3>
       <p>Ask the participants to turn their video on. This can be done by clicking the video icon to the right of their name in the participants panel or using the 'Connect Video' prompt displayed on their screen.</p>
@@ -220,6 +233,7 @@
       </div>
     </nav>
 
+<!-- Checks if your video is connected. If it is, checks if it's an AV venue; if no, directs to connect video-->
     <nav id="is-video-on" style="display:none;" class="step-links">
       <h3>In the participants panel, is there a video icon to the right of your name?</h3>
       <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-VideoConnected.png" style="width:400px; margin:auto; display:block; padding:20px;" />
@@ -229,6 +243,7 @@
       </div>
     </nav>
 
+<!-- Instructiosn to connect video. If this doesn't fix it, checks if this is an AV venue -->
     <nav id="connect-video" style="display:none;" class="step-links">
       <h3>Turn your video on</h3>
       <p>This can be done by clicking the video icon to the right of your name in the participants panel or using the 'Connect Video' prompt displayed on your screen.</p>
@@ -240,6 +255,7 @@
       </div>
     </nav>
 
+<!-- Checks if there is a bandwidth error being displayed. If there is, directs to info on it -->
     <nav id="is-video-error" style="display:none;" class="step-links">
       <h4>Is the follwing error being displayed?</h4>
       <p><i>Due to low bandwith or local computer conditions (such as CPU or RAM use), video is not currently available. Video will resume automatically when conditions improve.</i></p>
@@ -249,11 +265,13 @@
       </div>
     </nav>
 
+<!-- Details about bandwidth error (we can't fix it) -->
     <nav id="video-error-bandwidth" style="display:none" class="step-links">
       <h4>Low Bandwidth</h4>
       <p>WebEx has several built in features that turn on when your computer is working hard or the network is slower than required. It prioritises the different content streams, the ensure that the most important content stream (audio) is still available even when the network slows down to dial-up speeds. It will initially degrade and then drop out the video feeds (so you may notice a little lag or the video of the other end disappearing), then the content to ensure that the audio can still be heard clearly on both ends.</p>
     </nav>
 
+<!-- Check if you are using an AV venue. If you are, checking if there is a video error or if there are colour bars being displayed -->
     <nav id="is-av-venue" style="display:none;" class="step-links">
       <h3>Are your currently using a Curtin AV Venue?</h3>
       <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
@@ -262,6 +280,7 @@
       </div>
     </nav>
 
+<!-- Checks if colour bars are being displayed for the video feed or on a display. Then directs to Service Desk -->
     <nav id="is-colour-bars" style="display:none;" class="step-links">
       <h3>Can you see colour bars (similar to below) in the video feed or on one of the displays?</h3>
       <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/colourbars.png" style="width:200px; margin:auto; display:block; padding:20px;" />
@@ -272,6 +291,7 @@
     </nav>
 
 <!-- Diagnosing issues with content -->
+<!-- Checks what issues you're having with content. You can't see content, can't share content, other end can't see the content, grey boxes or soemthing else (directs to service desk) -->
     <nav id="content-issues" style="display:none" class="step-links">
       <h3>What best describes the issues you're having with content?</h3>
         <p><a data-opens="device-content-see" style="cursor:pointer; text-decoration:underline;">I can't see the content being shared</a></p>
@@ -281,6 +301,7 @@
         <p><a data-opens="service-desk" style="cursor:pointer; text-decoration:underline;">Something Else</a></p>
     </nav>
 
+<!-- Checks what device you are currently using. PC, Mac, iDevice, Android, WIndows, Blackberry, Telepresence (eg. Desk phone or DX80), Curtin Venue. Most of these will require talking to the service desk but some will display information on known errors -->
     <nav id="device-content-see" style="display:none;" class="step-links">
       <h3>What device are you using?</h3>
       <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
@@ -317,17 +338,31 @@
       </div>
     </nav>
 
+<!-- Windows Phone is Beta and has issuers with compatability -->
     <nav id="content-wp" style="display:none;" class="step-links">
       <p>The Windows Phone app for WebEx is currently still in Beta and there are several forms of content that currently not compatible when using the app on Windows Phone.</p>
+      <p>Please contact the Service Desk for further assistance using one of the following methods:
+        <ul>
+          <li>(+618) 9266 9000 and select option 1 for urgent assistance</li>
+          <li><a href="http://itselfservice.curtin.edu.au">Self Service Portal</a></li>
+          <li>Email <a href="mailto:service.desk@curtin.edu.au">service.desk@curtin.edu.au</a></li>
+        </ul>
+      </p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="" style="cursor:pointer">No</button>
+      </div>
     </nav>
 
+<!-- If using telepresence, checking what content is being shared. Whiteboard and file sharing aren't compatible with telepresence -->
     <nav id="content-telepresence" style="display:none;" class="step-links">
       <h3>Which method of content sharing are you using?</h3>
       <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
         <h4>Sharing your Screen</h4>
         <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-Share-Screen.png" style="width:170px; margin-left:auto; margin-right:auto; display:block; padding:5px;" />
       </div>
-      <div data-opens="content-telepresence" style="cursor:pointer; display:inline-block;">
+      <div data-opens="content-telepresence-issues" style="cursor:pointer; display:inline-block;">
         <h4>Sharing a File</h4>
         <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-Share-File.png" style="width:170px; margin-left:auto; margin-right:auto; display:block; padding:5px;" />
       </div>
@@ -335,7 +370,7 @@
         <h4>Sharing an Application</h4>
         <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-Share-Application.png" style="width:170px; margin-left:auto; margin-right:auto; display:block; padding:5px;" />
       </div>
-      <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
+      <div data-opens="content-telepresence-issues" style="cursor:pointer; display:inline-block;">
         <h4>Collaborative Whiteboard</h4>
         <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-Share-Whiteboard.png" style="width:260px; margin-left:auto; margin-right:auto; display:block; padding:5px;" />
       </div>
@@ -345,6 +380,24 @@
       </div>
     </nav>
 
+<!-- Whiteboard and file sharing aren't compatible with telepresence -->
+    <nav id="content-telepresence-issues" style="display:none;" class="step-links">
+      <p>Unfortunately WebEx Collaborative Whitebards and File Sharing are not currently compatible with Telepresence devices. Please choose another method of content sharing or select a different method of connecting to the meeting.</p>
+      <p>Please contact the Service Desk for further assistance using one of the following methods:
+        <ul>
+          <li>(+618) 9266 9000 and select option 1 for urgent assistance</li>
+          <li><a href="http://itselfservice.curtin.edu.au">Self Service Portal</a></li>
+          <li>Email <a href="mailto:service.desk@curtin.edu.au">service.desk@curtin.edu.au</a></li>
+        </ul>
+      </p>
+      <hr /><h4>Has your issue been resolved?</h4>
+      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
+        <button type="button" data-opens="" style="cursor:pointer">Yes</button>
+        <button type="button" data-opens="" style="cursor:pointer">No</button>
+      </div>
+    </nav>
+
+<!-- Checks if you're the host for the session or have presentation rights. If yes, service desk; if no, need to ask the host for presentation rights -->
     <nav id="is-presenter" style="display:none;" class="step-links">
       <h3>Are you the host or presenter for this session?</h3>
       <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
@@ -353,6 +406,7 @@
       </div>
     </nav>
 
+<!-- Talk tot the hsot about getting presentation rights -->
     <nav id="ask-host" style="display:none;" class="step-links">
       <hp>Contact the host/organisor of the session and request for them to give you presenter privileges</p>
       <hr /><h4>Has your issue been resolved?</h4>
@@ -362,6 +416,7 @@
       </div>
     </nav>
 
+<!-- Check what device they're using -->
     <nav id="device-content-they-see" style="display:none;" class="step-links">
       <h3>What device are they using?</h3>
       <div data-opens="service-desk" style="cursor:pointer; display:inline-block;">
@@ -398,6 +453,7 @@
       </div>
     </nav>
 
+<!-- Grey boxes are where taskbars are on presenters computer -->
     <nav id="content-grey-boxes" style="display:none;" class="step-links">
       <p>When sharing content by sharing your screen or sharing an application, WebEx will show a grey box over the content for all participants where the participants panel is on the host's screen. This can be moved, resized or hidden if required to show any content that it may be blocking.</p>
       <img src="[ioID]3F0A2AA2825C4C3AA555B717CB2B0CC1/WebEx-MC-Share-GreyBoxes.png" style="width:400px; margin-left:auto; margin-right:auto; display:block; padding:20px;" />
@@ -416,6 +472,8 @@
       </div>
     </nav>
 
+<!-- Diagnosing other issues -->
+<!-- Checks what issues you're having. These are more general questions to do with WebEx and scheduling than urgent troubleshooting-->
     <nav id="other-issues" style="display:none" class="step-links">
       <h3>What best describes the issues you're having?</h3>
       <p><a data-opens="time-start" style="cursor:pointer; text-decoration:underline;">I can't get into the session</a></p>
@@ -425,6 +483,7 @@
       <p><a data-opens="is-right-email" style="cursor:pointer; text-decoration:underline;">I'm trying to give someone scheduling permissions but it's displaying an error:</a> <br /><i style="text-align:center; display:block;">This email address is not associated with a valid WebEx host user account on this site: *******@curtin.edu.au</i></p>
     </nav>
 
+<!-- Check waht time the session is meant to start (and the day) and whether you can enter before it starts. Also check whether the host is already in the session. If you should be able to enter and can't, check the details are right -->
     <nav id="time-start" style="display:none;" class="step-links">
       <p>Depending on how the host has scheduled the session, you may only be able to enter the meeting up to 5 minutes before it starts. Confirm what time the session is meant to start and whether the host has started the session yet.</p>
       <hr /><h4>Has your issue been resolved?</h4>
@@ -434,6 +493,7 @@
       </div>
     </nav>
 
+<!-- Confirms details with session host. -->
     <nav id="confirm-details" style="display:none;" class="step-links">
       <h3>Contact the host to confirm that you have the correct details for your session</h3>
       <hr /><h4>Has your issue been resolved?</h4>
@@ -443,6 +503,7 @@
       </div>
     </nav>
 
+<!-- List of compatible operating systems and browsers and what versions -->
     <nav id="compatible-devices" style="display:none;" class="step-links">
       <h3>Compatible Devices</h3>
       <h4>Computer</h4>
@@ -477,6 +538,7 @@
       </div>
     </nav>
 
+<!-- Checks if you're trying to schedule on a generic calendar -->
     <nav id="is-calendar-generic" style="display:none;" class="step-links">
       <h3>Are you trying to schedule the session on a generic or shared calendar?</h3>
       <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
@@ -485,6 +547,7 @@
       </div>
     </nav>
 
+<!-- You can't schedule on a generic calendar -->
     <nav id="generic-calendar" style="display:none;" class="step-links">
       <h3>At this point in time, it isn't possible to schedule WebEx sessions on generic or shared calendars.</h3>
       <p>If you are hosting regular WebEx sessions are not able to use your own account for them, please contact the Service Desk to see if a generic accoun can be created for you.</p>
@@ -502,6 +565,7 @@
       </div>
     </nav>
 
+<!-- Are you trying to schedule on someone else's calendar -->
     <nav id="is-calendar-other" style="display:none;" class="step-links">
       <h3>Are you trying to schedule the session on someone else's calendar that you manage?</h3>
       <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
@@ -510,6 +574,7 @@
       </div>
     </nav>
 
+<!-- Do you have scheduling permissions to book on their behalf -->
     <nav id="is-scheduling-permissions" style="display:none;" class="step-links">
       <h3>Have you arranged to have scheduling permissions enabled for you on their WebEx account?</h3>
       <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
@@ -518,6 +583,7 @@
       </div>
     </nav>
 
+<!-- Instructions for how to enable scheduling permissions -->
     <nav id="scheduling-permissions" style="display:none;" class="step-links">
       <h3>Enabling Scheduling Permission</h3>
       <p>To allow people to schedule meetings on your behalf, navigate to:</p>
@@ -531,6 +597,7 @@
       </div>
     </nav>
 
+<!-- Check that their account has been activated (by logging in once) -->
     <nav id="is-scheduling-account-active" style="display:none;" class="step-links">
       <h3>Activate their Account</h3>
       <p>Ensure that the person you are trying to assign privileges to has activated their account. This can be done by logging into <a href="http://curtin.webex.com" target="_blank">curtin.webex.com</a> with their Staff OASIS credentials.</p>
@@ -542,6 +609,7 @@
       </div>
     </nav>
 
+<!-- Check that the email is right. It has to be the exact one that is registered for them on WebEx -->
     <nav id="is-right-email" style="display:none;" class="step-links">
       <p>To enable scheduling permissions, you must use the exact registered email address for the person. Most of the time it will be in the form of <i>firstname.lastname@curtin.edu.au</i> or <i>firstinitial.lastname@curtin.edu.au</i></p>
       <p>Note. Only Curtin Staff (those with a *******@curtin.edu.au email address) are able to be assigned scheduling privileges.</p>
@@ -552,6 +620,7 @@
       </div>
     </nav>
 
+<!-- Check if your alternate host has activated their account yet -->
     <nav id="is-account-active" style="display:none;" class="step-links">
       <h3>Activate their Account</h3>
       <p>Ensure that the person you are trying to assign privileges to has activated their account. This can be done by logging into <a href="http://curtin.webex.com" target="_blank">curtin.webex.com</a> with their Staff OASIS credentials.</p>
@@ -564,15 +633,7 @@
       </div>
     </nav>
 
-    <!-- <nav id="" style="display:none;" class="step-links">
-      <h3></h3>
-      <hr /><h4>Has your issue been resolved?</h4>
-      <div style="width:100px; margin-left:auto; margin-right:auto; display:block;">
-        <button type="button" data-opens="problem-solved" style="cursor:pointer">Yes</button>
-        <button type="button" data-opens="service-desk" style="cursor:pointer">No</button>
-      </div>
-    </nav> -->
-
+<!-- Directs them to contact the service desk -->
     <nav id="service-desk" style="display:none;" class="step-links">
       <p>Please contact the Service Desk for further assistance using one of the following methods:
         <ul>
@@ -583,61 +644,74 @@
       </p>
     </nav>
 
+<!-- Problem has been solved. Link to survey can be included here -->
     <nav id="problem-solved" style="display:none" class="step-links">
       <p>Thank you for using CITS WebEx Troubleshooting</p>
     </nav>
 
   </div>
 
+<!-- Back and refresh buttons -->
   <div id="controls">
     <hr />
     <button type="button" id="back">Back</button>
     <input type="button" id="refresh" value="Start Over" onClick="window.location.reload()" style="float:right">
   </div>
 
+<!-- This is the javascript used to run this page. Make sure that this is included and not changed (unless you know what you're doing) otherwise the page will not work -->
 <script>
+// Defining global variables
   var $linksContainer = $('.js-links');
   var $links = $linksContainer.find('div, button, a');
   var currentStep = $('.active');
   var prevStep = 0;
-  console.log("currentStep");
-  console.log(currentStep);
+  // console.log("currentStep");
+  // console.log(currentStep);
+// If someone clicks on one of the options, runs the function
   $links.click(function() {
+    // Assigns the current step as the previous step
     prevStep = $(this).parents('.step-links');
+    // Hides previous steps and removes active class
     $(this).parents('.step-links').hide();
     $(this).parents('.step-links').removeClass('active');
+    // Checks which step is meant to open based on selected option
     opensId = $(this).attr('data-opens');
+    // SHows the relevant step and makes it active
     $('#' + opensId).show();
     $('#' + opensId).addClass('active');
+    // Gets any active steps and assigns them as the current step
     currentStep = $('.active');
+    // Show the back button (this is hidden for the first step and if it's just been used)
     $('#back').show();
-    console.log("currentStep");
-    console.log(currentStep);
-    console.log("prevStep");
-    console.log(prevStep);
+    // console.log("currentStep");
+    // console.log(currentStep);
+    // console.log("prevStep");
+    // console.log(prevStep);
   });
 
+// Function for when the back button is clicked
   $('#back').click(function() {
+    //SHow the previous step and add an active class to it
     prevStep.show();
     prevStep.addClass('active');
-
+    //Hide the current step (where back was pressed) and remove the active class
     currentStep.hide();
     currentStep.removeClass('active');
-
+    // Make any active steps the current step (should only be one) and make previous step equal to zero
     currentStep = $('.active');
     prevStep = 0;
+    // Hide the back button
     $('#back').hide();
   });
 
+//If previous step is 0 (ie, it's just been used or there isn't a previous step because its the first step) hide the back button because it won't work
   if (prevStep === 0) {
     $('#back').hide();
   };
 
-  console.log("currentStep");
-  console.log(currentStep);
-  console.log("prev.Step");
-  console.log(prevStep);
+  // console.log("currentStep");
+  // console.log(currentStep);
+  // console.log("prev.Step");
+  // console.log(prevStep);
 
 </script>
-</body>
-</html>
